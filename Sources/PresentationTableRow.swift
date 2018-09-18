@@ -12,10 +12,10 @@ public protocol PresentationTableRowProtocol: PresentationItemProtocol  {
 
 public class PresentationTableRow<ViewType: UITableViewCell>: PresentationItem<ViewType>, PresentationTableRowProtocol where ViewType: PresentationModelViewProtocol {
     
-    public let style: UITableViewCellStyle
+	public let style: UITableViewCell.CellStyle
     public let reuseIdentifier: String
     
-    public init(model: ViewType.PresentationModelType, reuseIdentifier: String = String(describing: ViewType.self), style: UITableViewCellStyle = .default) {
+	public init(model: ViewType.PresentationModelType, reuseIdentifier: String = String(describing: ViewType.self), style: UITableViewCell.CellStyle = .default) {
         self.style = style
         self.reuseIdentifier = reuseIdentifier
         super.init(model: model)
